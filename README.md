@@ -1,11 +1,11 @@
-Shopping App Using Spring Microservices Concepts
+__Shopping App Using Spring Microservices Concepts__
 
 This project will use following Spring Microservice concepts
-1. Spring Cloud 
-2. Eureka Server
-3. Netflix Feign (Ribbon)
-4. Config Server
-5. Netflix Zuul
+- 1. Spring Cloud 
+- 2. Eureka Server
+- 3. Netflix Feign (Ribbon)
+- 4. Config Server
+- 5. Netflix Zuul
 
 Database: H2
 
