@@ -6,8 +6,10 @@ This project will use following Spring Microservice concepts
 * Netflix Feign (Ribbon)
 * Config Server
 * Netflix Zuul
-
-Database: H2
+* Database: H2
+#
+Eureka Server: 8010
+Config Server: 8001
 
 Product Service
 This service will provide product details like
