@@ -8,21 +8,24 @@ This project will use following Spring Microservice concepts
 * Netflix Zuul
 * Database: MYSQL
 
-Tables
+###Tables
 
-Table Name | Description | Insert query
------------|-------------|-------------
-Person     | Contains User Profile | CREATE TABLE PROFILE.PERSON( PERSON_ID BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL, EMAIL_ID VARCHAR(255) UNIQUE, NAME VARCHAR(255), FIRST_NAME VARCHAR(255), LAST_NAME VARCHAR(255), SEX VARCHAR(1), ADDRESS_1 VARCHAR(30), ADDRESS_2 VARCHAR(30), CITY VARCHAR(30), STATE VARCHAR(30), MOBILE VARCHAR(30));
-Album | Albums of User |CREATE TABLE SNAPPY.ALBUM (ALBUM_ID BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,DESCRIPTION VARCHAR(255), PERSON_ID BIGINT NOT NULL, CREATE_DATE DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, UPDATE_DATE DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (PERSON_ID) REFERENCES PROFILE.PERSON (PERSON_ID));
-Photo| Photo file information | CREATE TABLE SNAPPY.PHOTO (PHOTO_ID BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL, DESCRIPTION varchar(255), LOCATION varchar(255), PERSON_ID BIGINT NOT NULL, ALBUM_ID BIGINT NOT NULL, FILE_LOCATION MEDIUMTEXT NOT NULL, CREATE_DATE DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, UPDATE_DATE DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (ALBUM_ID) REFERENCES ALBUM (ALBUM_ID), FOREIGN KEY (PERSON_ID) REFERENCES PROFILE.PERSON (PERSON_ID));
-Rating|Contains the rating information | CREATE TABLE RATING.PIC_RATING (RATING_ID BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL, RATING INT, PHOTO_ID BIGINT NOT NULL, CREATE_DATE DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, UPDATE_DATE DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (PHOTO_ID) REFERENCES SNAPPY.PHOTO (PHOTO_ID));
+Schema |Table Name | Description  
+-------|-----------|-------------
+PROFILE|PERSON     | Person table with demographic information
+SNAPPY |ALBUM      | Photo album information like album id, person id etc
+SNAPPY |PHOTO      | Photo information like album id, photo id, location etc
+RATING |PIC_RATING | Stores rating information
 
-Server | Port(s)| Technologies Used
--------|-------|-------
-Config Server| 8001|
-Eureka Server| 8010|
-Product Service|8021, 8022, 8023|
-Product Inventory Service|8026, 8027, 8028|
-Product Catalog Service|8031, 8032,8033|
+
+###Servers
+Server         | Port(s)          | Technologies Used
+---------------|------------------|----------------
+Config Server  | 8001, 8002, 8003 |
+Eureka Server  | 8010, 8011, 8012 |
+Snappy Service | 8021, 8022, 8023 |
+Person Service | 8031, 8032, 8033 |
+Rating Service | 8041, 8042, 8043 |
+
 
 This is an inprogress project and any suggestions are welcome @ murali.dk.reddy@gmail.com
