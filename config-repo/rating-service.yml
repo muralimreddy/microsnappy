@@ -1,4 +1,5 @@
 spring:
+  profiles: ratingservice
   datasource:
     url: jdbc:mysql://localhost:3306/rating
     driver-class-name: com.mysql.jdbc.Driver
