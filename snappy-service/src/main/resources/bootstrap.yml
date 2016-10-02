@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: snappy-service
+server:
+  port: 8021
