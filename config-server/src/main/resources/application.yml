@@ -5,10 +5,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/muralimreddy/shoppingapp/config
+          uri: https://github.com/muralimreddy/microsnappy/config-repo
 server:
   port: 8001
-
   
 eureka:
   client:

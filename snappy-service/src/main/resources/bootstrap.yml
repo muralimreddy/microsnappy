@@ -1,5 +1,8 @@
 spring:
   application:
     name: snappy-service
+  cloud:
+    config:
+      uri: http://localhost:8001
 server:
   port: 8021
