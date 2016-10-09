@@ -5,11 +5,14 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/muralimreddy/microsnappy/config-repo
+          uri: https://github.com/muralimreddy/ConfigData
+          #searchPaths: configrepo
+          #uri: https://github.com/kennyk65/Microservices-With-Spring-Student-Files
+          #searchPaths: ConfigData
 server:
   port: 8001
   
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:8010/eureka/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
