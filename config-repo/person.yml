@@ -1,7 +1,6 @@
 #person-service.yml
 ---
 spring:
-  profiles: personservice
   datasource:
     url: jdbc:mysql://localhost:3306/snappy
     driver-class-name: com.mysql.jdbc.Driver
