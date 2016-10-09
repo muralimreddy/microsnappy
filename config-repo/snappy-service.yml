@@ -1,0 +1,12 @@
+spring:
+  profiles: snappyservice
+  datasource:
+    url: jdbc:mysql://localhost:3306/snappy
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        ddl-auto: validate
