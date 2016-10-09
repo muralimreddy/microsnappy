@@ -1,4 +1,5 @@
-lucky-word: Irish
+#person-service.yml
+---
 spring:
   profiles: personservice
   datasource:

@@ -1,3 +1,5 @@
+#snappy-service.yml
+---
 spring:
   profiles: snappyservice
   datasource:

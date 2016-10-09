@@ -1,3 +1,5 @@
+#rating-service.yml
+---
 spring:
   profiles: ratingservice
   datasource:
