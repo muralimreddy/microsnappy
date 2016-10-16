@@ -9,6 +9,8 @@ Online Photo Album app is created to store photos on the cloud. This project is 
 * - [x] Database: MYSQL
 * - [ ] OAuth2
 
+#### Spring Cloud Version - Spring Cloud - Brixton.SR6
+
 ### Services
 
 Sevice Name    | Service Description                                                                |Dependency Service
