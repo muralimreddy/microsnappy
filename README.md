@@ -1,4 +1,4 @@
-# Online Photo Album App Using Spring Microservices Concepts
+# Online Photo Album App using Spring Cloud Microservices Concepts
 
 Online Photo Album app is created to store photos on the cloud. This project is created to explore and expermentalize vaious Spring Cloud Concepts including
 
