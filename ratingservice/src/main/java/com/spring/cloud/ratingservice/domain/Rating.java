@@ -11,6 +11,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 
 /**
  * @author muralimanohar
@@ -36,6 +38,15 @@ public class Rating implements Serializable{
 	
 	@Column(name="UPDATE_DATE")
 	private Date updateDate;
+	
+	public Rating() {
+		super();
+	}
+	public Rating(Integer count, BigInteger photoId) {
+		super();
+		this.count = count;
+		this.photoId = photoId;
+	}
 
 	public BigInteger getRatingId() {
 		return ratingId;
@@ -77,4 +88,13 @@ public class Rating implements Serializable{
 		this.updateDate = updateDate;
 	}
 	
+	@PrePersist
+	void createdOn(){
+		this.createDate = this.updateDate = new Date();
+	}
+	
+	@PreUpdate
+	void updatedOn(){
+		this.updateDate = new Date();
+	}	
 }

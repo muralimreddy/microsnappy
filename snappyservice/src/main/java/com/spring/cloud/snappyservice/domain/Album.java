@@ -11,6 +11,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 
 /**
  * @author muralimanohar
@@ -33,9 +38,11 @@ public class Album implements Serializable{
 	private BigInteger personId;
 	
 	@Column(name="CREATE_DATE")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDate;
 	
 	@Column(name="UPDATE_DATE")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date updateDate;
 
 	public BigInteger getAlbumId() {
@@ -74,7 +81,17 @@ public class Album implements Serializable{
 		return updateDate;
 	}
 
-	public void setUpdateDate(Date updateDate) {
+	public void setUpdateDate(Date updateDate) {	
 		this.updateDate = updateDate;
+	}
+	
+	@PrePersist
+	void createdOn(){
+		this.createDate = this.updateDate = new Date();
+	}
+	
+	@PreUpdate
+	void updatedOn(){
+		this.updateDate = new Date();
 	}
 }

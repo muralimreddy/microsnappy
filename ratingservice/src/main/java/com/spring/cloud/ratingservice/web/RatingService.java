@@ -7,6 +7,7 @@ import java.math.BigInteger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,18 +26,20 @@ public class RatingService {
 	@Autowired
 	private RatingRepository ratingRepo;
 	
-	@RequestMapping(value="/getRatingByPhotoId/{ratingId}", method = RequestMethod.GET)
-	public @ResponseBody Rating getAlbumById(@PathVariable BigInteger ratingId){
-		return ratingRepo.getRatingByPhotoId(ratingId);
+	@RequestMapping(value="/getRatingByPhotoId/{photoId}", method = RequestMethod.GET)
+	public @ResponseBody Rating getRatingByPhotoId(@PathVariable BigInteger photoId){
+		return ratingRepo.getRatingByPhotoId(photoId);
 	}
 	
-//	@RequestMapping(value="/updateRatingByRatingId/{ratingId}/{rating}", method = RequestMethod.POST)
-//	public @ResponseBody Rating updateRatingByRatingId(@PathVariable BigInteger ratingId, @PathVariable Integer count){
-//		return ratingRepo.setRatingByRatingId(ratingId, count);
-//	}
-	
-//	@RequestMapping(value="/addRatingByRatingId/{photoId}/{rating}", method=RequestMethod.POST)
-//	public @ResponseBody Rating addRatingByRatingId(@PathVariable BigInteger photoId, @PathVariable Integer rating){
-//		return ratingRepo.addRatingByPhotoId(photoId, rating);
-//	}
+	@RequestMapping(value="/addRatingByPhotoId/{photoId}", method = RequestMethod.POST)
+	public @ResponseBody Rating addRating(@PathVariable BigInteger photoId){
+		Rating rating = ratingRepo.findByPhotoId(photoId);
+		if(rating == null){
+			Rating newRating = new Rating(1, photoId);
+			return ratingRepo.save(newRating);
+		}{
+			rating.setCount(rating.getCount() + 1);
+			return ratingRepo.save(rating);
+		}
+	}
 }

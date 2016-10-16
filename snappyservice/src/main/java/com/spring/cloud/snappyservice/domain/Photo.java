@@ -11,6 +11,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author muralimanohar
@@ -39,12 +43,14 @@ public class Photo implements Serializable{
 	private BigInteger albumId;
 	
 	@Column(name="FILE_LOCATION")
-	private BigInteger fileLocation;
+	private String fileLocation;
 	
 	@Column(name="CREATE_DATE")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDate;
 	
 	@Column(name="UPDATE_DATE")
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date updateDate;
 
 	public BigInteger getPhotoId() {
@@ -87,11 +93,11 @@ public class Photo implements Serializable{
 		this.albumId = albumId;
 	}
 
-	public BigInteger getFileLocation() {
+	public String getFileLocation() {
 		return fileLocation;
 	}
 
-	public void setFileLocation(BigInteger fileLocation) {
+	public void setFileLocation(String fileLocation) {
 		this.fileLocation = fileLocation;
 	}
 
@@ -99,7 +105,7 @@ public class Photo implements Serializable{
 		return createDate;
 	}
 
-	public void setCreateDate(Date createDate) {
+	public void setCreateDate(Date createDate) {	
 		this.createDate = createDate;
 	}
 
@@ -107,9 +113,16 @@ public class Photo implements Serializable{
 		return updateDate;
 	}
 
-	public void setUpdateDate(Date updateDate) {
+	public void setUpdateDate(Date updateDate) {	
 		this.updateDate = updateDate;
+	}	
+	@PrePersist
+	void createdOn(){
+		this.createDate = this.updateDate = new Date();
 	}
 	
-	
+	@PreUpdate
+	void updatedOn(){
+		this.updateDate = new Date();
+	}	
 }

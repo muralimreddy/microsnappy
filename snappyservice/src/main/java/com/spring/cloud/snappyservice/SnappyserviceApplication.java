@@ -7,12 +7,12 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @EnableWebMvc
-@EnableDiscoveryClient
 @EnableFeignClients
+@EnableDiscoveryClient
 @SpringBootApplication
-public class SnappyServiceApplication {
+public class SnappyserviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SnappyServiceApplication.class, args);
+		SpringApplication.run(SnappyserviceApplication.class, args);
 	}
 }
