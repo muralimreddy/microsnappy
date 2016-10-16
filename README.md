@@ -1,18 +1,28 @@
 # Online Photo Album App Using Spring Microservices Concepts
 
-This project will use following Spring Microservice concepts
+Online Photo Album app is created to store photos on the cloud. This project is created to explore and expermentalize vaious Spring Cloud Concepts including
+
 * Spring Cloud 
 * Eureka Server
 * Netflix Feign (Ribbon)
 * Config Server
 * Netflix Zuul
 * Database: MYSQL
+* OAuth2 (TBD)
+
+###Services
+
+Sevice Name    | Service Description                                                                |Dependency Service
+---------------|------------------------------------------------------------------------------------|-------------------
+Snappy Service | RESTful Service which allows adding of Album, Photo, updating / deleting photo     |Profile service
+Rating Service | RESTful service to record count of like of a photo                                 |Snappy service
+Profile Service| RESTful service to register profile                                                |
 
 ###Tables
 
 Schema |Table Name | Description  
--------|-----------|-------------
-PROFILE|PERSON     | Person table with demographic information
+-------|-----------|---------------------------------------------------------
+PROFILE|PERSON     | Person table with demographic information 
 SNAPPY |ALBUM      | Photo album information like album id, person id etc
 SNAPPY |PHOTO      | Photo information like album id, photo id, location etc
 RATING |PIC_RATING | Stores rating information
@@ -29,3 +39,5 @@ Rating Service | 8041, 8042, 8043 |
 
 
 This is an inprogress project and any suggestions are welcome @ murali.dk.reddy@gmail.com
+
+Last Updated: Oct 16, 2016
