@@ -68,6 +68,6 @@ POST    | Delete Person        | http://localhost:8031/PersonService/deletePerso
  - [x] MYSQL 
  - [x] Brew
 
-This is an inprogress project and any suggestions are welcome @ murali.dk.reddy@gmail.com
+This  project is inprogress. Any suggestions are welcome @ murali.dk.reddy@gmail.com
 
 Last Updated: Oct 16, 2016
