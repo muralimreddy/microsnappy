@@ -2,13 +2,12 @@
 
 Online Photo Album app is created to store photos on the cloud. This project is created to explore and expermentalize vaious Spring Cloud Concepts including
 
-* Spring Cloud 
-* Eureka Server
-* Netflix Feign (Ribbon)
-* Config Server
-* Netflix Zuul
-* Database: MYSQL
-* OAuth2 (TBD)
+* - [x] Spring Config 
+* - [x] Eureka Server
+* - [ ] Netflix Feign (Ribbon)
+* - [ ] Netflix Zuul
+* - [x] Database: MYSQL
+* - [ ] OAuth2
 
 ###Services
 
@@ -40,4 +39,4 @@ Rating Service | 8041, 8042, 8043 |
 
 This is an inprogress project and any suggestions are welcome @ murali.dk.reddy@gmail.com
 
-Last Updated: Oct 16, 2016
+___Last Updated: Oct 16, 2016
