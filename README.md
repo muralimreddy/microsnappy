@@ -15,9 +15,10 @@ Online Photo Album app is created to store photos on the cloud. This project is 
 
 Sevice Name    | Service Description                                                                |Dependency Service
 ---------------|------------------------------------------------------------------------------------|-------------------
-Snappy Service | RESTful Service which allows adding of Album, Photo, updating / deleting photo     |Profile service
+Snappy Service | RESTful Service which allows adding of Album, Photo, updating / deleting photo     |Profile service, Photo File Upload Service
 Rating Service | RESTful service to record count of like of a photo                                 |Snappy service
 Profile Service| RESTful service to register profile                                                |
+Photo File Upload Service | RESTful service handles File IO. This service is not exposed to client and its consumed by Snappy Service | 
 
 ### Tables
 
