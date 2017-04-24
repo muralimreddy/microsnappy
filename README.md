@@ -71,6 +71,3 @@ POST    | Delete Person        | http://localhost:8031/PersonService/deletePerso
  - [x] Postman
  - [x] MYSQL 
  - [x] Brew
-
-
-Last Updated: Oct 16, 2016
