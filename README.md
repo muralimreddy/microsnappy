@@ -1,10 +1,10 @@
 # Online Photo Album App using Spring Cloud Microservices Concepts
 
-Online Photo Album app is created to store photos on the cloud. This project is created to explore and expermentalize vaious Spring Cloud Concepts including
+Online Photo Album app is created to store photos on the cloud. 
 
 * - [x] Spring Config 
 * - [x] Eureka Server
-* - [ ] Netflix Feign (Ribbon)
+* - [x] Netflix Feign (Ribbon)
 * - [ ] Netflix Zuul
 * - [x] Database: MYSQL
 * - [ ] OAuth2
